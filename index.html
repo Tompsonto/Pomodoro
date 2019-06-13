@@ -4,7 +4,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Pomodoro</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <!--ios-->
+        <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+        <meta name="apple-mobile-web-app-atatus-bar" content="#F54E01">
+        <meta name="theme-color" content="#F54E01">
     </head>
     <body>
             
@@ -16,8 +22,8 @@
             <p class="head">Break</p>
             <p class="counter" id="break-counter">5</p>
             <div class="button-wrapper">
-            <button id="break-button-less">less</button>
-            <button id="break-button-more">more</button>
+            <button id="break-button-less"><i class='uil uil-minus'></i></button>
+            <button id="break-button-more"><i class='uil uil-plus'></i></button>
             </div>
         </div>
         <div class="session-wrapper">
@@ -25,22 +31,24 @@
             <p class="counter" id="session-counter">25</p>
            
             <div class="button-wrapper">
-            <button id="session-button-less">less</button>
-            <button id="session-button-more">more</button>
+            <button id="session-button-less"><i class='uil uil-minus'></i></button>
+            <button id="session-button-more"><i class='uil uil-plus'></i></button>
             </div>    
         </div>
     </header>
-    <h1>CHILL</h1>
+    <h1 class="state-header">dddd</h1>
     <div class="main-counter">
       <p class="main-time">00:00</p> 
       <div class="background"></div>
      
     </div>
     <div class="button-wrapper">
-    <button id="start">start</button>
-    <button id="stop">stop</button>
+    <button id="start"><i class='uil uil-caret-right'></i></button>
+    <button id="stop"><i class='uil uil-redo'></i></button>
     </div>
      </div>
-        <script src="script.js"></script>
+     
+<script src="js/app.js"></script>       
+<script src="/js/script.js"></script>
     </body>
 </html>

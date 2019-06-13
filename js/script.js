@@ -10,7 +10,7 @@ const breakCounter = document.querySelector('#break-counter');
 const mainCounter = document.querySelector('.main-time');
 
 const start = document.querySelector('#start');
-const stop = document.querySelector('#stop');
+const reset = document.querySelector('#stop');
 
 const animationBackground = document.querySelector('.background')
 var breakTime = 5 ;
@@ -51,11 +51,18 @@ start.addEventListener('click',()=>{
     clearInterval(countdown)
     let secondSession = sessionTime * 60;
     timer(secondSession);
+    header.textContent = 'WORK'
   
+})
+
+reset.addEventListener('click',()=>{
+    clearInterval(countdown);
+    mainCounter.textContent = `00:00`;
 })
 
 let session = 0;
 let countdown 
+const header = document.querySelector('.state-header')
 function timer(seconds){
     const now = Date.now();
     const then = now + seconds * 1000;
@@ -75,6 +82,7 @@ function timer(seconds){
                 clearInterval(countdown);
                 timer(sessionTime*60)
                 session = 0
+                header.textContent = 'WORK'
                 
             }else 
             {
@@ -82,6 +90,7 @@ function timer(seconds){
                 clearInterval(countdown);
                 timer(breakTime*60)
                 session = 1
+                header.textContent = 'BREAK'
             }
            
             
