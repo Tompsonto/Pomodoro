@@ -135,4 +135,8 @@ button {
   background: white;
   font-size: 25px;
 }
+
+button:active, button:focus {
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */

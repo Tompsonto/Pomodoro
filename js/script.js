@@ -26,7 +26,7 @@ moreBreak.addEventListener('click',()=>{
     
 })
 lessBreak.addEventListener('click',()=>{
-    if(breakTime>0)
+    if(breakTime>1)
     {
         breakTime-=1;
         breakCounter.textContent = breakTime;
@@ -34,7 +34,7 @@ lessBreak.addEventListener('click',()=>{
 })
 
 lessSession.addEventListener('click',()=>{
-    if(sessionTime >0)
+    if(sessionTime >1)
     {
     sessionTime -=1;
     }
@@ -58,6 +58,7 @@ start.addEventListener('click',()=>{
 reset.addEventListener('click',()=>{
     clearInterval(countdown);
     mainCounter.textContent = `00:00`;
+    header.textContent = '';
 })
 
 let session = 0;
@@ -66,7 +67,7 @@ const header = document.querySelector('.state-header')
 function timer(seconds){
     const now = Date.now();
     const then = now + seconds * 1000;
-    
+    document.getElementById('ding').play();
     displayTimeLeft(seconds);
     countdown =  setInterval(()=>{
         const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -82,7 +83,8 @@ function timer(seconds){
                 clearInterval(countdown);
                 timer(sessionTime*60)
                 session = 0
-                header.textContent = 'WORK'
+                header.textContent = 'WORK';
+              
                 
             }else 
             {
@@ -90,7 +92,8 @@ function timer(seconds){
                 clearInterval(countdown);
                 timer(breakTime*60)
                 session = 1
-                header.textContent = 'BREAK'
+                header.textContent = 'BREAK';
+                
             }
            
             

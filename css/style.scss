@@ -112,4 +112,8 @@ button
     height:50px;
     background: white;
     font-size: 25px;
+    &:active, &:focus 
+    {
+        outline:none;
+    }
 }
